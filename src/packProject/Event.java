@@ -6,7 +6,7 @@ import java.util.List;
 
 public abstract class Event {
     private InformationAboutEvent information;
-
+    private static long QuantityOfUsers;
     public void setInformation(String name,Date date,Time time,String nameOfThePlace,int capacity, boolean bar,int quantityOfParticipants, List<Produter> produterList) {
         information.setName(name);
         information.setDate(date);
@@ -19,7 +19,14 @@ public abstract class Event {
         information.setQuantityOfParticipants(quantityOfParticipants);
         information.setProduterList(produterList);
     }
-
+    public void addUser(){
+        try{
+            if(QuantityOfUsers>information.getPlace().getCapacity())
+                throw new MyException("Число пользователей переполнено") ;
+        }catch (MyException my){
+            my.getMessage();
+        }
+    }
     public InformationAboutEvent getInformation() {
         return information;
     }
