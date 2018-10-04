@@ -19,13 +19,10 @@ public abstract class Event {
         information.setQuantityOfParticipants(quantityOfParticipants);
         information.setProduterList(produterList);
     }
-    public void addUser(){
-        try{
+    public void addUser()throws MyException{
             if(QuantityOfUsers>information.getPlace().getCapacity())
-                throw new MyException("Число пользователей переполнено") ;
-        }catch (MyException my){
-            my.getMessage();
-        }
+                throw new MyException("Число пользователей переполнено!!!") ;
+
     }
     public InformationAboutEvent getInformation() {
         return information;
