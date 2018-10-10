@@ -1,5 +1,7 @@
 package packProject;
 
+import Exceptions.MyException;
+
 public class Admin extends User {
 
 public void addUsers(){

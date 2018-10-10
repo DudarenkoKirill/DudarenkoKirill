@@ -1,5 +1,7 @@
 package packProject;
 
+import Exceptions.MyException;
+
 import java.sql.Time;
 import java.util.Date;
 import java.util.List;
@@ -19,9 +21,9 @@ public abstract class Event {
         information.setQuantityOfParticipants(quantityOfParticipants);
         information.setProduterList(produterList);
     }
-    public void addUser()throws MyException{
+    public void addUser()throws MyException {
             if(QuantityOfUsers>information.getPlace().getCapacity())
-                throw new MyException("Число пользователей переполнено!!!") ;
+                throw new MyException("!!!Число пользователей переполнено!!!") ;
 
     }
     public InformationAboutEvent getInformation() {
